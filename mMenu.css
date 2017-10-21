@@ -1,0 +1,145 @@
+@charset "UTF-8";
+#mMenu{
+    list-style: none;
+    text-align: center;
+    color: white;/*メニュータイトル文字色／color of menu title*/ 
+}
+#mMenu li a{
+    color: white;/*メニュー内リンク文字色／color of hyperlink in list*/
+    width: 100%;
+    height: 100%;
+    display:block;
+}
+#mMenu_switch{
+    display: none;
+}
+#mMenu li.mMenu_item,#mMenu_title div,#mMenu_buttonBox{
+    background-color: #29672c;/*メニュー背景色／background-color of menu*/
+}
+@media screen and (max-width: 480px) {
+#mMenu{
+    width: 95vw;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/*スマホ用メニューの大きさ／size of upper-right menu*/
+#mMenu_title div,#mMenu_buttonBox{
+    width: 60px;
+}
+#mMenu_title,#mMenu_title div{
+    height: 20px;
+}
+#mMenu_button,#mMenu_buttonBox{
+    height: 40px;
+}
+/*右上メニュー　文字の部分／menu title. you can chante text,size,etc...*/
+#mMenu_title{
+    font-size: 6pt;
+    text-align: right;
+}
+#mMenu_title div{
+    position: absolute;
+    right: 0;
+}
+#mMenu_title span::after{
+    content: "MENU";/*右上メニューの文字／text of upper-right menu*/
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+}
+#mMenu_switch:checked ~ #mMenu_title span::after{
+    content: "CLOSE";/*右上メニューの文字（メニューが開いている時）／text of upper-right menu (when menu open)*/
+}
+#mMenu_buttonBox{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#mMenu_title ~ #mMenu_button #mMenu_buttonBox{
+    top:20px;
+}
+#mMenu_buttonBox div,#mMenu_buttonBox div::before,#mMenu_buttonBox div::after{
+    width: 45px;
+    height: 2px;
+    margin: auto;
+    position: relative;
+    top: 19px;
+    background-color: white;
+}
+#mMenu_buttonBox div::before,#mMenu_buttonBox div::after{
+    content:"";
+    margin: 0 auto;
+    top: -8px;
+    display: block;
+}
+#mMenu_buttonBox div::after{
+    top: 6px;
+}
+#mMenu_switch:checked ~ #mMenu_button #mMenu_buttonBox div,
+#mMenu_switch:checked ~ #mMenu_button #mMenu_buttonBox div::after{
+    width: 40px;
+    transform: rotate(45deg);
+}
+#mMenu_switch:checked ~ #mMenu_button #mMenu_buttonBox div::after{
+    top: 0;
+    transform: rotate(90deg);
+}
+#mMenu_switch:checked ~ #mMenu_button #mMenu_buttonBox div::before{
+    display: none;
+}
+#mMenu_switch:checked ~ li.mMenu_item{
+    display: list-item;
+}
+#mMenu_switch:checked ~ label #mMenu_bg{
+    display: block;
+}
+#mMenu_switch ~ li.mMenu_item,#mMenu_switch ~ label #mMenu_bg{
+    display: none;
+}
+#mMenu li.mMenu_item{
+    line-height: 50px;/*スマホ用リストの高さ／height of list*/
+    margin-top: 2px;
+    position: relative;
+}
+#mMenu_bg{
+    width: 110vw;
+    height: 110vh;
+    position: fixed;
+    top: -10vh;
+    left: -10vw;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#mMenu *:not(#mMenu_bg){
+    z-index: 1;
+}
+#mMenu{
+    pointer-events: none;
+}
+#mMenu_title div,#mMenu_buttonBox,#mMenu_bg,#mMenu li.mMenu_item{
+    pointer-events: auto;
+}
+}
+@media screen and (min-width: 481px) {
+    #mMenu{
+        width: 100%;
+        padding: 0;
+        display: table;
+        table-layout: fixed;
+        border-collapse: separate;
+        border-spacing: 2px;
+    }
+    #mMenu li.mMenu_item{
+        line-height: 40px;/*PC用リストの高さ／height of list*/
+        display: table-cell;
+    }
+    #mMenu_title,#mMenu_button,#mMenu label{
+        display: none;
+    }
+}
