@@ -1,5 +1,5 @@
 # mMenu
-CSS responsive menu no JavaScript and picture
+CSS responsive menu no JavaScript and picture  
 CSSのみで出来たレスポンシブメニュー（JavaScriptと画像は一切使用していません）
 
 ## Demo  
