@@ -38,7 +38,7 @@
 }
 /*右上メニュー　文字の部分／menu title. you can chante text,size,etc...*/
 #mMenu_title{
-    font-size: 6pt;
+    font-size: 6px;
     text-align: right;
 }
 #mMenu_title div{
