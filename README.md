@@ -3,7 +3,7 @@ CSS responsive menu no JavaScript and picture
 CSSのみで出来たレスポンシブメニュー（JavaScriptと画像は一切使用していません）
 
 ## Demo  
-[DEMO](http://mo2nabe.com/practice_css/mMenuDEMO.html)  
+[DEMO](http://mo2nabe.com/mycode/demo/mMenuDEMO.html)  
 ![demo1](https://raw.githubusercontent.com/motsu0/mMenu/master/DEMOimg/mMenu001.PNG)
 ![demo2](https://raw.githubusercontent.com/motsu0/mMenu/master/DEMOimg/mMenu002.PNG)
 ![demo3](https://raw.githubusercontent.com/motsu0/mMenu/master/DEMOimg/mMenu003.PNG)
